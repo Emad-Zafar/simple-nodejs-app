@@ -3,7 +3,7 @@ name: CI/CD Pipeline
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   build:
@@ -31,5 +31,5 @@ jobs:
 
       - name: Push Docker image
         run: |
-          docker tag my-app ${{ secrets.DOCKER_HUB_USERNAME }}/my-app:latest
-          docker push ${{ secrets.DOCKER_HUB_USERNAME }}/my-app:latest
+          docker tag my-app ${{ secrets.DOCKER_USERNAME }}/my-app:latest
+          docker push ${{ secrets.DOCKER_USERNAME }}/my-app:latest
