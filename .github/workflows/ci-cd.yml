@@ -32,6 +32,6 @@ jobs:
 
       # Step 6: Push Docker image to Docker Hub
       - name: Push Docker image
-        run: docker tag myapp:latest ${{ secrets.DOCKER_USERNAME }}/myapp:latest
-      - name: Push to Docker Hub
-        run: docker push ${{ secrets.DOCKER_USERNAME }}/myapp:latest
+        run: |
+          docker tag myapp:latest ${{ secrets.DOCKER_USERNAME }}/myapp:latest
+          docker push ${{ secrets.DOCKER_USERNAME }}/myapp:latest

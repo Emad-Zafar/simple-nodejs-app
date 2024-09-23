@@ -1,9 +1,9 @@
-import * as chai from "chai"; // Import all exports from chai
+import chai from "chai"; // Import chai as a whole
 import chaiHttp from "chai-http";
 import app from "../index.js"; // Ensure this imports the app correctly
 
 chai.use(chaiHttp);
-const { expect } = chai; // Destructure expect after importing chai
+const { expect } = chai; // Destructure expect
 
 describe("Wikipedia API Express App", () => {
   it("should render the home page (GET /)", (done) => {
@@ -12,7 +12,7 @@ describe("Wikipedia API Express App", () => {
       .get("/")
       .end((err, res) => {
         expect(res).to.have.status(200);
-        expect(res.text).to.include("Simple nodejs app"); // Adjust this string to match your home page content
+        expect(res.text).to.include("Simple nodejs app"); // Adjust this string if needed
         done();
       });
   });
